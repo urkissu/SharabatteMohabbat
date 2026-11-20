@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For my pretty woman ♡</title>
+    <title>SharabatteMohabbat♡</title>
 
     <style>
         * {
@@ -56,7 +56,7 @@
             cursor: pointer;
         }
 
-        /* INTRO */
+        /* Shree Ganesh */
 
         .down-arrow {
             font-size: 35px;
@@ -70,7 +70,7 @@
             }
         }
 
-        /* MANDIR */
+        /* Aaapka maan mera mandir */
 
         .mandir-scene {
             position: relative;
@@ -87,7 +87,7 @@
             height: auto;
         }
 
-        /* BELL */
+        /* Ghanti */
 
         .mandir-bell {
             position: absolute;
@@ -125,7 +125,7 @@
             filter: brightness(1.08);
         }
 
-        /* DIYA AND AGARBATTI */
+        /* you ma ganga jal  */
 
         .mandir-light {
             position: absolute;
@@ -163,7 +163,7 @@
             top: 71%;
         }
 
-        /* DIYA FLICKER */
+        /* Ups and down of light */
 
         .diya.lit img {
             animation: diyaFlicker 2s infinite ease-in-out;
@@ -191,7 +191,7 @@
             }
         }
 
-        /* AGARBATTI GLOW */
+        /* Glow likeee my korean skin */
 
         .agarbatti.lit img {
             animation: agarbattiGlow 2.5s infinite ease-in-out;
@@ -207,7 +207,7 @@
             }
         }
 
-        /* SMOKE */
+        /* no fuufuu bad for health */
 
         .agarbatti-smoke {
             display: none;
@@ -260,7 +260,7 @@
             margin-top: 25px;
         }
 
-        /* PICKLES */
+        /* Aam ka plate me neembu ka aachar tha */
 
         .pickle-scene {
             position: relative;
@@ -295,7 +295,7 @@
     padding: 0;
 }
 
-/* Individual jar click areas */
+/* Aachari kissi flavours */
 
 .pickle-spots button:nth-child(1) {
     left: 13%;
@@ -364,17 +364,17 @@
             font-size: 17px;
         }
 
-        /* END */
+        /* Shaba khair */
 
         .ending {
             min-height: 70vh;
         }
 
-        /* LITTLE KESHAV */
+        /* Later to be addded */
 
     
 
-        /* MUSIC BUTTON */
+        /* Gaana */
 
         #FavsongButton {
             position: fixed;
@@ -392,7 +392,7 @@
         }
 
         
-/* MOBILE */
+/* Fone */
 
 @media (max-width: 600px) {
 
@@ -422,7 +422,7 @@
     body {
     font-family: Arial, Helvetica, sans-serif;
 }
-    /* MANDIR */
+    /* Chappal khol kr aana bas (feet yum)*/
 
     .mandir-scene {
         width: 95vw;
@@ -454,11 +454,11 @@
     }
 
     .agarbatti {
-        right: -7%;
+        right: 6%;
         top: 75%;
     }
 
-    /* PICKLES */
+    /* Aachari masti */
 
     .pickle-scene {
         width: 95vw;
@@ -473,7 +473,7 @@
         height: auto;
     }
 
-    /* FOOD */
+    /* Bhukuu */
 
     .food-display {
         width: 100%;
@@ -490,7 +490,7 @@
         font-size: 17px;
     }
 
-    /* END */
+    /* Khatam Gn tc sc st */
 
     .ending {
         min-height: 75vh;
@@ -498,7 +498,7 @@
         padding-right: 18px;
     }
 
-    /* MUSIC BUTTON */
+    /* My early morning kisses */
 
     #FavsongButton {
         width: 45px;
@@ -515,7 +515,6 @@
 
 <body>
 
-    <!-- INTRO -->
 
     <section>
         <h1>Helooo prettyy womann <3</h1>
@@ -529,7 +528,7 @@
     </section>
 
 
-    <!-- MANDIR -->
+    <!-- Aapka maan mera mandir -->
 
     <section class="mandir-section" id="mandir">
 
@@ -568,7 +567,7 @@
     </section>
 
 
-    <!-- PICKLES -->
+    <!-- Extra aachari masti😝 -->
 
     <section>
 
@@ -595,7 +594,7 @@
     </section>
 
 
-    <!-- FOOD -->
+    <!-- Khaana pina -->
 
     <section>
 
@@ -617,7 +616,7 @@
     </section>
 
 
-    <!-- END -->
+    <!-- Khatam -->
 
     <section class="ending">
 
@@ -627,14 +626,14 @@
     </section>
 
 
-    <!-- MUSIC -->
+    <!-- Ganaa -->
 
-   <!-- BACKGROUND SONG -->
+   <!-- my early morning kisses my so much -->
 <audio id="ourSong" loop>
     <source src="Youaremy.mp3" type="audio/mpeg">
 </audio>
 
-<!-- KISS SOUND -->
+<!-- kissiii -->
 <audio id="bellSound">
     <source src="mwah.mp3" type="audio/mpeg">
 </audio>
@@ -646,7 +645,7 @@
         
 
 
-        /* BELL */
+        /* Maan ki ghanti*/
 
         const mandirBell = document.getElementById("mandirBell");
         const bellSound = document.getElementById("bellSound");
@@ -665,7 +664,7 @@ document.getElementById("prayerMessage").textContent =
         });
 
 
-        /* AGARBATTI */
+        /* Om jai ravyaa mommyy*/
 
         let agarbattiIsLit = false;
 
@@ -686,7 +685,7 @@ document.getElementById("prayerMessage").textContent =
         });
 
 
-        /* DIYA */
+        /* Haaye re daiyaa(diya) */
 
         let diyaIsLit = false;
 
@@ -707,7 +706,7 @@ document.getElementById("prayerMessage").textContent =
         });
 
 
-        /* PICKLES */
+        /* Pure Aachar */
 
         document.querySelectorAll(".pickle-spots button").forEach(function(jar) {
 
@@ -721,7 +720,7 @@ document.getElementById("prayerMessage").textContent =
         });
 
 
-       /* PICKLE MOUSE MOVEMENT */
+       /* Aachar ki apni masti */
 
 const pickleScene = document.querySelector(".pickle-scene");
 const picklePicture = document.querySelector(".pickle-picture");
@@ -751,7 +750,7 @@ pickleScene.addEventListener("mouseleave", function() {
 });
 
 
-        /* FOOD RANDOMIZER */
+        /* Puchku ka khaana*/
 
         const foodChoices = [
     { name: "Chocolate time! ♡", image: "chaklet.png" },
@@ -783,7 +782,7 @@ document.getElementById("foodButton").addEventListener("click", function() {
 
 });
 
-        /* FAVOURITE SONG */
+        /* Gaana shaana*/
 
         const ourSong = document.getElementById("ourSong");
         const favsongButton = document.getElementById("FavsongButton");
