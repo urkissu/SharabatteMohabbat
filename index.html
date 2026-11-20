@@ -1,0 +1,812 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For my pretty woman ♡</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-image: url("backie.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #33241f;
+            font-family: "Comic Sans MS", cursive;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 70px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        h2 {
+            font-size: 34px;
+            font-weight: normal;
+        }
+
+        p {
+            max-width: 650px;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        /* INTRO */
+
+        .down-arrow {
+            font-size: 35px;
+            margin-top: 50px;
+            animation: bob 1.5s infinite;
+        }
+
+        @keyframes bob {
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* MANDIR */
+
+        .mandir-scene {
+            position: relative;
+            width: 800px;
+            max-width: 95vw;
+            left: auto;
+            transform: none;
+            margin: 45px auto 30px;
+        }
+
+        .bhagwanji {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* BELL */
+
+        .mandir-bell {
+            position: absolute;
+            top: 34%;
+            left: 51%;
+            transform: translateX(-50%);
+            width: 270px;
+            height: 240px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            z-index: 5;
+        }
+
+        .mandir-bell img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform-origin: 50% 5%;
+        }
+
+        .mandir-bell.ringing img {
+            animation: ringBell .65s ease-in-out;
+        }
+
+        @keyframes ringBell {
+            0%, 100% { transform: rotate(0deg); }
+            20% { transform: rotate(17deg); }
+            40% { transform: rotate(-17deg); }
+            60% { transform: rotate(11deg); }
+            80% { transform: rotate(-7deg); }
+        }
+
+        .mandir-bell:hover img {
+            filter: brightness(1.08);
+        }
+
+        /* DIYA AND AGARBATTI */
+
+        .mandir-light {
+            position: absolute;
+            width: 340px;
+            height: 360px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            font-size: 19px;
+        }
+
+        .mandir-light img {
+            width: 440px;
+            height: 400px;
+            max-width: none;
+            object-fit: contain;
+            transition: transform .25s ease;
+        }
+
+        .mandir-light:hover img {
+            transform: scale(1.04);
+        }
+
+        .diya {
+            left: 5%;
+            top: 78%;
+        }
+
+        .agarbatti {
+            right: 1%;
+            top: 71%;
+        }
+
+        /* DIYA FLICKER */
+
+        .diya.lit img {
+            animation: diyaFlicker 2s infinite ease-in-out;
+        }
+
+        @keyframes diyaFlicker {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px #ffae42);
+                opacity: 1;
+            }
+
+            25% {
+                filter: drop-shadow(0 0 19px #ffb347);
+                opacity: .94;
+            }
+
+            50% {
+                filter: drop-shadow(0 0 13px #ff8c32);
+                opacity: 1;
+            }
+
+            75% {
+                filter: drop-shadow(0 0 23px #ffd166);
+                opacity: .96;
+            }
+        }
+
+        /* AGARBATTI GLOW */
+
+        .agarbatti.lit img {
+            animation: agarbattiGlow 2.5s infinite ease-in-out;
+        }
+
+        @keyframes agarbattiGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 4px #e7a06c);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 13px #e9a16b);
+            }
+        }
+
+        /* SMOKE */
+
+        .agarbatti-smoke {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 15px;
+            height: 35px;
+            pointer-events: none;
+        }
+
+        .agarbatti.lit .agarbatti-smoke {
+            display: block;
+        }
+
+        .agarbatti-smoke::before,
+        .agarbatti-smoke::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 12px;
+            height: 24px;
+            border-left: 2px solid rgba(110, 100, 95, .45);
+            border-radius: 50%;
+            animation: incenseSmoke 2.5s infinite ease-out;
+        }
+
+        .agarbatti-smoke::after {
+            animation-delay: 1.2s;
+        }
+
+        @keyframes incenseSmoke {
+            0% {
+                opacity: 0;
+                transform: translateY(5px) translateX(0);
+            }
+
+            30% {
+                opacity: .7;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-40px) translateX(9px);
+            }
+        }
+
+        #prayerMessage {
+            min-height: 30px;
+            margin-top: 25px;
+        }
+
+        /* PICKLES */
+
+        .pickle-scene {
+            position: relative;
+            width: min(85vw, 650px);
+            margin: 35px auto;
+            transform: translate(70px, 38px);
+        }
+
+       .pickle-picture,
+.pickle-spots {
+    transform: rotate(0deg);
+    transform-origin: center bottom;
+    transition: transform .2s ease-out;
+}
+
+        .pickle-scene:hover .pickle-picture {
+            filter: drop-shadow(0 7px 5px rgba(80, 40, 10, .12));
+        }
+
+      .pickle-spots {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+}
+
+.pickle-spots button {
+    position: absolute;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 6;
+    padding: 0;
+}
+
+/* Individual jar click areas */
+
+.pickle-spots button:nth-child(1) {
+    left: 13%;
+    top: 24%;
+    width: 13%;
+    height: 23%;
+}
+
+.pickle-spots button:nth-child(2) {
+    left: 29%;
+    top: 24%;
+    width: 13%;
+    height: 23%;
+}
+
+.pickle-spots button:nth-child(3) {
+    left: 45%;
+    top: 24%;
+    width: 13%;
+    height: 23%;
+}
+
+.pickle-spots button:nth-child(4) {
+    left: 61%;
+    top: 24%;
+    width: 13%;
+    height: 23%;
+}
+        .pickle-spots button {
+            border: none;
+            background: transparent;
+        }
+
+        #pickleMessage {
+            min-height: 30px;
+        }
+
+        /* FOOD */
+
+        .food-display {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #foodPicture {
+            display: block;
+            width: min(75vw, 280px);
+            height: 230px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        #foodName {
+            min-height: 35px;
+        }
+
+        #foodButton {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: 2px dashed rgba(51, 36, 31, .7);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, .2);
+            color: #33241f;
+            font-size: 17px;
+        }
+
+        /* END */
+
+        .ending {
+            min-height: 70vh;
+        }
+
+        /* LITTLE KESHAV */
+
+    
+
+        /* MUSIC BUTTON */
+
+        #FavsongButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px dashed white;
+            background: rgba(20, 20, 50, 0.7);
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+            z-index: 150;
+        }
+
+        
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 30px;
+        line-height: 1.35;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 1.4;
+        padding: 0 5px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        padding: 0 8px;
+    }
+
+    section {
+        min-height: 100vh;
+        padding: 55px 12px;
+    }
+
+    body {
+        background-attachment: scroll;
+    }
+
+    /* MANDIR */
+
+    .mandir-scene {
+        width: 95vw;
+        max-width: 430px;
+        margin: 30px auto;
+    }
+
+    .mandir-bell {
+        width: clamp(125px, 42vw, 175px);
+        height: clamp(115px, 40vw, 165px);
+        top: 9%;
+        left: 53%;
+    }
+
+    .mandir-light {
+        width: 120px;
+        height: 150px;
+        top: 76%;
+    }
+
+    .mandir-light img {
+        width: 165px;
+        height: 165px;
+    }
+
+    .diya {
+        left: 2%;
+        top: 78%;
+    }
+
+    .agarbatti {
+        right: 2%;
+        top: 78%;
+    }
+
+    /* PICKLES */
+
+    .pickle-scene {
+        width: 95vw;
+        max-width: 500px;
+        margin: 25px auto;
+        transform: none;
+    }
+
+    .pickle-picture {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    /* FOOD */
+
+    .food-display {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #foodPicture {
+        width: min(80vw, 260px);
+        height: 210px;
+    }
+
+    #foodButton {
+        padding: 13px 28px;
+        font-size: 17px;
+    }
+
+    /* END */
+
+    .ending {
+        min-height: 75vh;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    /* MUSIC BUTTON */
+
+    #FavsongButton {
+        width: 45px;
+        height: 45px;
+        top: 12px;
+        right: 12px;
+        font-size: 21px;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- INTRO -->
+
+    <section>
+        <h1>Helooo prettyy womann <3</h1>
+
+        <p>
+            I wishh i couldd be theree rn taking care of youu,
+            So i made this to feel closer to you my strong woman!!
+        </p>
+
+        <div class="down-arrow">↓</div>
+    </section>
+
+
+    <!-- MANDIR -->
+
+    <section class="mandir-section" id="mandir">
+
+        <h2>My Bhagwan ji</h2>
+        <p>Your pure for me all da timee</p>
+
+        <div class="mandir-scene">
+
+            <img src="bhagwanji.png"
+                 class="bhagwanji"
+                 alt="Bhagwan Ji's mandir">
+
+            <button id="mandirBell" class="mandir-bell">
+                <img src="tingg.png" alt="Bell">
+            </button>
+
+            <button id="diya" class="mandir-light diya">
+                <img id="diyaPicture"
+                     src="unlightened.png"
+                     alt="Diya">
+                <span></span>
+            </button>
+
+            <button id="agarbatti" class="mandir-light agarbatti">
+                <img id="agarbattiPicture"
+                     src="unholy.png"
+                     alt="Agarbatti">
+                <span></span>
+                <span class="agarbatti-smoke"></span>
+            </button>
+
+        </div>
+
+        <p id="prayerMessage">Bell icon dabana na bhoole, diya and agarbatti too♡</p>
+
+    </section>
+
+
+    <!-- PICKLES -->
+
+    <section>
+
+        <h2>Here!! Touch em and make them pure!!</h2>
+        <p>Touch me after that as well 😝</p>
+
+        <div class="pickle-scene">
+
+            <img src="puredabba.png"
+                 class="pickle-picture"
+                 alt="Pickle jars">
+
+            <div class="pickle-spots">
+                <button data-pickle="Mixed"></button>
+                <button data-pickle="Mirchi"></button>
+                <button data-pickle="Aam"></button>
+                <button data-pickle="Gajar"></button>
+            </div>
+
+        </div>
+
+        <p id="pickleMessage">Oye hoye mere chumme me aachar hai</p>
+
+    </section>
+
+
+    <!-- FOOD -->
+
+    <section>
+
+        <h2>Mele babu ne thaana thaya?</h2>
+        <p>Aajauu haath se khilaungaa</p>
+
+        <div class="food-display">
+
+            <img id="foodPicture" src="roll.png" alt="Food">
+
+            <p id="foodName">*licks your hand to clean them*</p>
+
+            <button id="foodButton">
+                Touch me
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- END -->
+
+    <section class="ending">
+
+        <h2>I wanna pamper youu soo muchh and give you lots of huggiess</h2>
+        <p>i pyaaru pyaaru so muchhh lavyaa म.</p>
+
+    </section>
+
+
+    <!-- MUSIC -->
+
+   <!-- BACKGROUND SONG -->
+<audio id="ourSong" loop>
+    <source src="Youaremy.mp3" type="audio/mpeg">
+</audio>
+
+<!-- KISS SOUND -->
+<audio id="bellSound">
+    <source src="mwah.mp3" type="audio/mpeg">
+</audio>
+    <button id="FavsongButton" onclick="toggleFavsong()">🔇</button>
+
+
+    <script>
+
+        
+
+
+        /* BELL */
+
+        const mandirBell = document.getElementById("mandirBell");
+        const bellSound = document.getElementById("bellSound");
+
+        mandirBell.addEventListener("click", function() {
+
+            mandirBell.classList.remove("ringing");
+            void mandirBell.offsetWidth;
+            mandirBell.classList.add("ringing");
+
+           bellSound.currentTime = 0;
+bellSound.play().catch(() => {});
+
+document.getElementById("prayerMessage").textContent =
+    "Mwaaaaaah ♡";
+        });
+
+
+        /* AGARBATTI */
+
+        let agarbattiIsLit = false;
+
+        document.getElementById("agarbatti").addEventListener("click", function() {
+
+            agarbattiIsLit = !agarbattiIsLit;
+
+            document.getElementById("agarbattiPicture").src =
+                agarbattiIsLit ? "broken.png" : "unholy.png";
+
+            this.classList.toggle("lit", agarbattiIsLit);
+
+            document.getElementById("prayerMessage").textContent =
+                agarbattiIsLit
+                ? "Wish maangoo!!! oops!! aap to khud bhagwanji ho🤭"
+                : "Dont worry, i will make them true somehow!";
+
+        });
+
+
+        /* DIYA */
+
+        let diyaIsLit = false;
+
+        document.getElementById("diya").addEventListener("click", function() {
+
+            diyaIsLit = !diyaIsLit;
+
+            document.getElementById("diyaPicture").src =
+                diyaIsLit ? "lightened.png" : "unlightened.png";
+
+            this.classList.toggle("lit", diyaIsLit);
+
+            document.getElementById("prayerMessage").textContent =
+                diyaIsLit
+                ? "You make my life bright as well puchku ♡"
+                : "hehe no worries, think about me cus in my mind its always lit♡";
+
+        });
+
+
+        /* PICKLES */
+
+        document.querySelectorAll(".pickle-spots button").forEach(function(jar) {
+
+            jar.addEventListener("click", function() {
+
+                document.getElementById("pickleMessage").textContent =
+                    this.dataset.pickle + " Aachari chumma? ye lo😘 ♡";
+
+            });
+
+        });
+
+
+       /* PICKLE MOUSE MOVEMENT */
+
+const pickleScene = document.querySelector(".pickle-scene");
+const picklePicture = document.querySelector(".pickle-picture");
+const pickleSpots = document.querySelector(".pickle-spots");
+
+pickleScene.addEventListener("mousemove", function(e) {
+
+    const bounds = pickleScene.getBoundingClientRect();
+
+    const mousePosition =
+        (e.clientX - bounds.left) / bounds.width;
+
+    const tilt = (mousePosition - 0.5) * 8;
+
+    const movement = `rotate(${tilt}deg) translateY(-3px)`;
+
+    picklePicture.style.transform = movement;
+    pickleSpots.style.transform = movement;
+
+});
+
+pickleScene.addEventListener("mouseleave", function() {
+
+    picklePicture.style.transform = "rotate(0deg) translateY(0)";
+    pickleSpots.style.transform = "rotate(0deg) translateY(0)";
+
+});
+
+
+        /* FOOD RANDOMIZER */
+
+        const foodChoices = [
+    { name: "Chocolate time! ♡", image: "chaklet.png" },
+    { name: "Rani ♡", image: "rani.png" },
+    { name: "Ice cream time!", image: "icekream.png" },
+    { name: "Pijjaaa 🍕", image: "pijja.png" }
+];
+
+let lastChoice = -1;
+
+document.getElementById("foodButton").addEventListener("click", function() {
+
+    let choice;
+
+    do {
+        choice = Math.floor(Math.random() * foodChoices.length);
+    } while (choice === lastChoice);
+
+    lastChoice = choice;
+
+    const selectedFood = foodChoices[choice];
+    const foodPicture = document.getElementById("foodPicture");
+
+    foodPicture.src = selectedFood.image;
+    foodPicture.style.display = "block";
+
+    document.getElementById("foodName").textContent =
+        selectedFood.name;
+
+});
+
+        /* FAVOURITE SONG */
+
+        const ourSong = document.getElementById("ourSong");
+        const favsongButton = document.getElementById("FavsongButton");
+
+        function toggleFavsong() {
+
+            if (ourSong.paused) {
+
+                ourSong.play().then(() => {
+                    favsongButton.textContent = "🔊";
+                }).catch(() => {
+                    favsongButton.textContent = "🔇";
+                });
+
+            } else {
+
+                ourSong.pause();
+                favsongButton.textContent = "🔇";
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
